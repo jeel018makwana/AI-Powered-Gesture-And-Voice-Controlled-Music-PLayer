@@ -1,5 +1,5 @@
 # backend/player.py
-import pygame
+import pygame, os
 from backend.spotify_control import SpotifyController
 
 class MusicPlayer:
@@ -8,7 +8,7 @@ class MusicPlayer:
         self.current_index = 0
         self.is_playing = False
         self.volume = 0.5
-
+        os.environ["SDL_VIDEORIVER"] ="dummy"
         # Initialize pygame mixer
         pygame.mixer.init()
         self.spotify = spotify_controller
